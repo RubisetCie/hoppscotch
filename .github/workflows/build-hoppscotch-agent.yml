@@ -55,8 +55,6 @@ jobs:
           node-version: 20
       - name: Setup PNPM
         uses: pnpm/action-setup@v4
-        with:
-          version: 10.15.0
       - name: Install Rust
         uses: actions-rs/toolchain@v1
         with:
@@ -117,8 +115,6 @@ jobs:
           node-version: 20
       - name: Setup PNPM
         uses: pnpm/action-setup@v4
-        with:
-          version: 10.15.0
       - name: Install Rust
         uses: actions-rs/toolchain@v1
         with:
@@ -179,8 +175,6 @@ jobs:
           node-version: 20
       - name: Setup PNPM
         uses: pnpm/action-setup@v4
-        with:
-          version: 10.15.0
       - name: Install Rust
         uses: actions-rs/toolchain@v1
         with:
@@ -252,8 +246,6 @@ jobs:
           node-version: 20
       - name: Setup PNPM
         uses: pnpm/action-setup@v4
-        with:
-          version: 10.15.0
       - name: Install Rust
         uses: actions-rs/toolchain@v1
         with:
@@ -325,8 +317,6 @@ jobs:
           node-version: 20
       - name: Setup PNPM
         uses: pnpm/action-setup@v4
-        with:
-          version: 10.15.0
       - name: Install Rust
         uses: actions-rs/toolchain@v1
         with:
@@ -378,8 +368,6 @@ jobs:
           node-version: 20
       - name: Setup PNPM
         uses: pnpm/action-setup@v4
-        with:
-          version: 10.15.0
       - name: Install Rust
         uses: actions-rs/toolchain@v1
         with:
