@@ -2,26 +2,10 @@ name: Build Desktop
 on:
   workflow_dispatch:
     inputs:
-      version:
+      version_tag:
         description: Tag of the version to build
         default: '1.0.0'
         required: true
-#      repository:
-#        description: Repository to checkout
-#        required: false
-#        default: "hoppscotch/hoppscotch"
-#      branch:
-#        description: Branch to checkout
-#        required: true
-#        default: "main"
-#      tag:
-#        description: Tag to checkout (takes precedence over branch if provided)
-#        required: false
-#        default: ""
-#      release_notes:
-#        description: Release notes for the update
-#        required: false
-#        default: "PLACEHOLDER RELEASE NOTES"
       build_linux:
         description: Build for Linux
         type: boolean
@@ -50,19 +34,18 @@ env:
   BUNDLER_PATH: ${{ github.workspace }}/packages/hoppscotch-desktop/crates/webapp-bundler
 jobs:
   build-linux:
+    name: Build Linux
     runs-on: ubuntu-24.04
     if: ${{ inputs.build_linux }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 20
       - name: Setup PNPM
         uses: pnpm/action-setup@v4
-        with:
-          version: 10.18.3
       - name: Install Rust
         uses: actions-rs/toolchain@v1
         with:
@@ -95,7 +78,7 @@ jobs:
             gir1.2-javascriptcoregtk-4.1=2.44.0-2 \
             gir1.2-webkit2-4.1=2.44.0-2;
       - name: Cache Rust dependencies
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: |
             ~/.cargo/registry
@@ -139,19 +122,21 @@ jobs:
         run: |
           ls -lahR ${{ env.DESKTOP_PATH }}/src-tauri/target/release/bundle/
           mkdir -p dist
-          cp ${{ env.DESKTOP_PATH }}/src-tauri/target/release/bundle/appimage/*.AppImage dist/Hoppscotch_SelfHost_linux_x64.AppImage
-          cp ${{ env.DESKTOP_PATH }}/src-tauri/target/release/bundle/deb/*.deb dist/Hoppscotch_SelfHost_linux_x64.deb
+          cp ${{ env.DESKTOP_PATH }}/src-tauri/target/release/bundle/appimage/*.AppImage dist/hoppscotch-linux-x64.AppImage
+          cp ${{ env.DESKTOP_PATH }}/src-tauri/target/release/bundle/deb/*.deb dist/hoppscotch-linux-x64.deb
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: selfhost-desktop-linux
+          name: hoppscotch-desktop-linux
           path: dist/*
+          compression-level: 9
   build-windows:
+    name: Build Windows
     runs-on: windows-latest
     if: ${{ inputs.build_windows }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: Set Perl environment variables
         shell: pwsh
         run: |
@@ -163,15 +148,13 @@ jobs:
           node-version: 20
       - name: Setup PNPM
         uses: pnpm/action-setup@v4
-        with:
-          version: 10.18.3
       - name: Install Rust
         uses: actions-rs/toolchain@v1
         with:
           toolchain: nightly
           override: true
       - name: Cache Rust dependencies
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: |
             ~/.cargo/registry
@@ -217,26 +200,26 @@ jobs:
         run: |
           Get-ChildItem -Recurse ${{ env.DESKTOP_PATH }}\src-tauri\target\release\bundle
           mkdir dist
-          Copy-Item ${{ env.DESKTOP_PATH }}\src-tauri\target\release\bundle\msi\*_x64_en-US.msi dist\Hoppscotch_SelfHost_win_x64.msi
+          Copy-Item ${{ env.DESKTOP_PATH }}\src-tauri\target\release\bundle\msi\*_x64_en-US.msi dist\hoppscotch-win-x64.msi
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: selfhost-desktop-windows
+          name: hoppscotch-desktop-windows
           path: dist/*
+          compression-level: 9
   build-macos-x64:
+    name: Build MacOS (x64)
     runs-on: macos-latest
     if: ${{ inputs.build_macos_x64 }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 20
       - name: Setup PNPM
         uses: pnpm/action-setup@v4
-        with:
-          version: 10.18.3
       - name: Install Rust
         uses: actions-rs/toolchain@v1
         with:
@@ -253,7 +236,7 @@ jobs:
           chmod +x cargo-tauri
           sudo mv cargo-tauri /usr/local/bin/tauri
       - name: Cache Rust dependencies
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: |
             ~/.cargo/registry
@@ -292,27 +275,27 @@ jobs:
         run: |
           ls -lahR ${{ env.DESKTOP_PATH }}/src-tauri/target/x86_64-apple-darwin/release/bundle/
           mkdir -p dist
-          cp ${{ env.DESKTOP_PATH }}/src-tauri/target/x86_64-apple-darwin/release/bundle/dmg/*.dmg dist/Hoppscotch_SelfHost_mac_x64.dmg
-          cp ${{ env.DESKTOP_PATH }}/src-tauri/target/x86_64-apple-darwin/release/bundle/macos/Hoppscotch.app.tar.gz dist/Hoppscotch_SelfHost_mac_x64.tar.gz
+          cp ${{ env.DESKTOP_PATH }}/src-tauri/target/x86_64-apple-darwin/release/bundle/dmg/*.dmg dist/hoppscotch-mac-x64.dmg
+          cp ${{ env.DESKTOP_PATH }}/src-tauri/target/x86_64-apple-darwin/release/bundle/macos/Hoppscotch.app.tar.gz dist/hoppscotch-mac-x64.tar.gz
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: selfhost-desktop-macos-x64
+          name: hoppscotch-desktop-macos-x64
           path: dist/*
+          compression-level: 9
   build-macos-arm64:
+    name: Build MacOS (ARM64)
     runs-on: macos-latest
     if: ${{ inputs.build_macos_arm64 }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 20
       - name: Setup PNPM
         uses: pnpm/action-setup@v4
-        with:
-          version: 10.18.3
       - name: Install Rust
         uses: actions-rs/toolchain@v1
         with:
@@ -329,7 +312,7 @@ jobs:
           chmod +x cargo-tauri
           sudo mv cargo-tauri /usr/local/bin/tauri
       - name: Cache Rust dependencies
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: |
             ~/.cargo/registry
@@ -368,10 +351,11 @@ jobs:
         run: |
           ls -lahR ${{ env.DESKTOP_PATH }}/src-tauri/target/aarch64-apple-darwin/release/bundle/
           mkdir -p dist
-          cp ${{ env.DESKTOP_PATH }}/src-tauri/target/aarch64-apple-darwin/release/bundle/dmg/*.dmg dist/Hoppscotch_SelfHost_mac_aarch64.dmg
-          cp ${{ env.DESKTOP_PATH }}/src-tauri/target/aarch64-apple-darwin/release/bundle/macos/Hoppscotch.app.tar.gz dist/Hoppscotch_SelfHost_mac_aarch64.tar.gz
+          cp ${{ env.DESKTOP_PATH }}/src-tauri/target/aarch64-apple-darwin/release/bundle/dmg/*.dmg dist/hoppscotch-mac-aarch64.dmg
+          cp ${{ env.DESKTOP_PATH }}/src-tauri/target/aarch64-apple-darwin/release/bundle/macos/Hoppscotch.app.tar.gz dist/hoppscotch-mac-aarch64.tar.gz
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: selfhost-desktop-macos-aarch64
+          name: hoppscotch-desktop-macos-aarch64
           path: dist/*
+          compression-level: 9
