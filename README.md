@@ -1,11 +1,9 @@
 <div align="center">
-  <a href="https://hoppscotch.io">
-    <img
-      src="https://avatars.githubusercontent.com/u/56705483"
-      alt="Hoppscotch"
-      height="64"
-    />
-  </a>
+  <img
+    src="https://avatars.githubusercontent.com/u/56705483"
+    alt="Hoppscotch"
+    height="64"
+  />
   <h3>
     <b>
       Hoppscotch
@@ -15,35 +13,13 @@
     Open Source API Development Ecosystem
   </b>
   <p>
-
-[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen?logo=github)](CODE_OF_CONDUCT.md) [![Website](https://img.shields.io/website?url=https%3A%2F%2Fhoppscotch.io&logo=hoppscotch)](https://hoppscotch.io) [![Tests](https://github.com/hoppscotch/hoppscotch/actions/workflows/tests.yml/badge.svg)](https://github.com/hoppscotch/hoppscotch/actions) [![Tweet](https://img.shields.io/twitter/url?url=https%3A%2F%2Fhoppscotch.io%2F)](https://x.com/share?text=%F0%9F%91%BD%20Hoppscotch%20%E2%80%A2%20Open%20source%20API%20development%20ecosystem%20-%20Helps%20you%20create%20requests%20faster,%20saving%20precious%20time%20on%20development.&url=https://hoppscotch.io&hashtags=hoppscotch&via=hoppscotch_io)
-
-  </p>
-  <p>
-    <sub>
-      Built with ❤︎ by
-      <a href="https://github.com/hoppscotch/hoppscotch/graphs/contributors">
-        contributors
-      </a>
-    </sub>
-  </p>
-  <br />
-  <p>
-    <a href="https://hoppscotch.io">
-      <picture>
-        <source media="(prefers-color-scheme: dark)" srcset="./packages/hoppscotch-common/public/images/banner-dark.png">
-        <source media="(prefers-color-scheme: light)" srcset="./packages/hoppscotch-common/public/images/banner-light.png">
-        <img alt="Hoppscotch" src="./packages/hoppscotch-common/public/images/banner-dark.png">
-      </picture>
-    </a>
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="./packages/hoppscotch-common/public/images/banner-dark.png">
+      <source media="(prefers-color-scheme: light)" srcset="./packages/hoppscotch-common/public/images/banner-light.png">
+      <img alt="Hoppscotch" src="./packages/hoppscotch-common/public/images/banner-dark.png">
+    </picture>
   </p>
 </div>
-
-_We highly recommend you take a look at the [**Hoppscotch Documentation**](https://docs.hoppscotch.io) to learn more about the app._
-
-#### **Support**
-
-[![Chat on Discord](https://img.shields.io/badge/chat-Discord-7289DA?logo=discord)](https://hoppscotch.io/discord) [![Chat on Telegram](https://img.shields.io/badge/chat-Telegram-2CA5E0?logo=telegram)](https://hoppscotch.io/telegram) [![Discuss on GitHub](https://img.shields.io/badge/discussions-GitHub-333333?logo=github)](https://github.com/hoppscotch/hoppscotch/discussions)
 
 ### **Features**
 
@@ -51,7 +27,7 @@ _We highly recommend you take a look at the [**Hoppscotch Documentation**](https
 
 ⚡️ **Fast:** Send requests and get responses in real time.
 
-🗄️ **HTTP Methods:** Request methods define the type of action you are requesting to be performed.
+🗄️ **HTTP Methods:** Request methods define the type of action requested to be performed.
 
 - `GET` - Requests retrieve resource information
 - `POST` - The server creates a new entry in a database
@@ -62,17 +38,15 @@ _We highly recommend you take a look at the [**Hoppscotch Documentation**](https
 - `CONNECT` - Establishes a tunnel to the server identified by the target resource
 - `OPTIONS` - Describe the communication options for the target resource
 - `TRACE` - Performs a message loop-back test along the path to the target resource
-- `<custom>` - Some APIs use custom request methods such as `LIST`. Type in your custom methods.
+- `<custom>` - Some APIs use custom request methods such as `LIST`.
 
-🌈 **Theming:** Customizable combinations for background, foreground, and accent colors — [customize now](https://hoppscotch.io/settings).
+🌈 **Theming:** Customizable combinations for background, foreground, and accent colors.
 
 - Choose a theme: System preference, Light, Dark, and Black
 - Choose accent colors: Green, Teal, Blue, Indigo, Purple, Yellow, Orange, Red, and Pink
 - Distraction-free Zen mode
 
-_Customized themes are synced with your cloud/local session._
-
-🔥 **PWA:** Install as a [Progressive Web App](https://web.dev/progressive-web-apps) on your device.
+🔥 **PWA:** Install as a [Progressive Web App](https://web.dev/progressive-web-apps).
 
 - Instant loading with Service Workers
 - Offline support
@@ -99,7 +73,7 @@ _Customized themes are synced with your cloud/local session._
 
 🦟 **MQTT:** Subscribe and Publish to topics of an MQTT Broker.
 
-🔮 **GraphQL:** GraphQL is a query language for APIs and a runtime for fulfilling those queries with your existing data.
+🔮 **GraphQL:** GraphQL is a query language for APIs and a runtime for fulfilling queries with existing data.
 
 - Set endpoint and get schema
 - Multi-column docs
@@ -115,7 +89,7 @@ _Customized themes are synced with your cloud/local session._
 - OAuth 2.0
 - OIDC Access Token/PKCE
 
-📢 **Headers:** Describes the format the body of your request is being sent in.
+📢 **Headers:** Describes the format the body of the request is being sent in.
 
 📫 **Parameters:** Use request parameters to set varying parts in simulated requests.
 
@@ -132,15 +106,13 @@ _Customized themes are synced with your cloud/local session._
 - View response headers
 - View raw and preview HTML, image, JSON, and XML responses
 
-⏰ **History:** Request entries are synced with your cloud/local session storage.
+⏰ **History:** Request entries can be synced between cloud and local session storage.
 
-📁 **Collections:** Keep your API requests organized with collections and folders. Reuse them with a single click.
+📁 **Collections:** Keep API requests organized with collections and folders. Reuse them with a single click.
 
 - Unlimited collections, folders, and requests
 - Nested folders
 - Export and import as a file or GitHub gist
-
-_Collections are synced with your cloud/local session storage._
 
 📜 **Pre-Request Scripts:** Snippets of code associated with a request that is executed before the request is sent.
 
@@ -149,7 +121,7 @@ _Collections are synced with your cloud/local session storage._
 - Send a random alphanumeric string in the URL parameters
 - Any JavaScript functions
 
-👨‍👩‍👧‍👦 **Teams:** Helps you collaborate across your teams to design, develop, and test APIs faster.
+👨‍👩‍👧‍👦 **Teams:** Collaborate across your teams to design, develop, and test APIs faster.
 
 - Create unlimited teams
 - Create unlimited shared collections
@@ -158,29 +130,21 @@ _Collections are synced with your cloud/local session storage._
 - Cloud sync
 - Multiple devices
 
-👥 **Workspaces:** Organize your personal and team collections environments into workspaces. Easily switch between workspaces to manage multiple projects.
+👥 **Workspaces:** Organize personal and team collections environments into workspaces. Easily switch between workspaces to manage multiple projects.
 
 - Create unlimited workspaces
 - Switch between personal and team workspaces
 
 ⌨️ **Keyboard Shortcuts:** Optimized for efficiency.
 
-> **[Read our documentation on Keyboard Shortcuts](https://docs.hoppscotch.io/documentation/features/shortcuts)**
+> **[Read documentation on Keyboard Shortcuts](https://docs.hoppscotch.io/documentation/features/shortcuts)**
 
 🌐 **Proxy:** Enable Proxy Mode from Settings to access blocked APIs.
 
-- Hide your IP address
+- Hides IP address
 - Fixes [`CORS`](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) (Cross-Origin Resource Sharing) issues
 - Access APIs served in non-HTTPS (`http://`) endpoints
-- Use your Proxy URL
-
-_Official proxy server is hosted by Hoppscotch - **[GitHub](https://github.com/hoppscotch/proxyscotch)** - **[Privacy Policy](https://docs.hoppscotch.io/support/privacy)**._
-
-🌎 **i18n:** Experience the app in your language.
-
-Help us to translate Hoppscotch. Please read [`TRANSLATIONS`](TRANSLATIONS.md) for details on our [`CODE OF CONDUCT`](CODE_OF_CONDUCT.md) and the process for submitting pull requests to us.
-
-☁️ **Auth + Sync:** Sign in and sync your data in real-time across all your devices.
+- Uses Proxy URL
 
 **Sign in with:**
 
@@ -190,7 +154,7 @@ Help us to translate Hoppscotch. Please read [`TRANSLATIONS`](TRANSLATIONS.md) f
 - Email
 - SSO (Single Sign-On)[^EE]
 
-**🔄 Synchronize your data:** Handoff to continue tasks on your other devices.
+**🔄 Synchronize data:** Handoff to continue tasks on other devices.
 
 - Workspaces
 - History
@@ -206,7 +170,7 @@ Help us to translate Hoppscotch. Please read [`TRANSLATIONS`](TRANSLATIONS.md) f
 - Set environment variables
 - Write JavaScript code
 
-🌱 **Environments:** Environment variables allow you to store and reuse values in your requests and scripts.
+🌱 **Environments:** Environment variables allows to store and reuse values in requests and scripts.
 
 - Unlimited environments and variables
 - Initialize through the pre-request script
@@ -239,22 +203,17 @@ Help us to translate Hoppscotch. Please read [`TRANSLATIONS`](TRANSLATIONS.md) f
 
 📦 **Add-ons:** Official add-ons for hoppscotch.
 
-- **[Hoppscotch CLI](https://github.com/hoppscotch/hoppscotch/tree/main/packages/hoppscotch-cli)** - Command-line interface for Hoppscotch.
-- **[Proxy](https://github.com/hoppscotch/proxyscotch)** - A simple proxy server created for Hoppscotch.
-- **[Browser Extensions](https://github.com/hoppscotch/hoppscotch-extension)** - Browser extensions that enhance your Hoppscotch experience.
+- **[Hoppscotch CLI](https://github.com/RubisetCie/hoppscotch/tree/main/packages/hoppscotch-cli)** - Command-line interface for Hoppscotch.
+- **[Proxy](https://github.com/RubisetCie/proxyscotch)** - A simple proxy server created for Hoppscotch.
+- **[Browser Extensions](https://github.com/RubisetCie/hoppscotch-extension)** - Browser extensions that enhance your Hoppscotch experience.
 
   [![Firefox](https://raw.github.com/alrra/browser-logos/master/src/firefox/firefox_16x16.png) **Firefox**](https://addons.mozilla.org/en-US/firefox/addon/hoppscotch) &nbsp;|&nbsp; [![Chrome](https://raw.github.com/alrra/browser-logos/master/src/chrome/chrome_16x16.png) **Chrome**](https://chrome.google.com/webstore/detail/hoppscotch-extension-for-c/amknoiejhlmhancpahfcfcfhllgkpbld)
 
   > **Extensions fix `CORS` issues.**
 
-_Add-ons are developed and maintained under **[Hoppscotch Organization](https://github.com/hoppscotch)**._
+_Add-ons are developed and maintained under **[Hoppscotch Organization](https://github.com/RubisetCie)**._
 
-**For a complete list of features, please read our [documentation](https://docs.hoppscotch.io).**
-
-## **Demo**
-
-- Web : [hoppscotch.io](https://hoppscotch.io)
-- Windows/Linux/macOS : [Desktop Apps](https://docs.hoppscotch.io/documentation/clients/desktop#download-hoppscotch-desktop-app)
+**For a complete list of features, please read the [documentation](https://docs.hoppscotch.io).**
 
 ## Usage
 
@@ -262,35 +221,9 @@ _Add-ons are developed and maintained under **[Hoppscotch Organization](https://
 2. Click "Send" to simulate the request
 3. View the response
 
-## Developing
-
-Follow our [self-hosting documentation](https://docs.hoppscotch.io/documentation/self-host/getting-started) to get started with the development environment.
-
-## Contributing
-
-Please contribute using [GitHub Flow](https://guides.github.com/introduction/flow). Create a branch, add commits, and [open a pull request](https://github.com/hoppscotch/hoppscotch/compare).
-
-Please read [`CONTRIBUTING`](CONTRIBUTING.md) for details on our [`CODE OF CONDUCT`](CODE_OF_CONDUCT.md), and the process for submitting pull requests to us.
-
-## Continuous Integration
-
-We use [GitHub Actions](https://github.com/features/actions) for continuous integration. Check out our [build workflows](https://github.com/hoppscotch/hoppscotch/actions).
-
-## Changelog
-
-See the [`CHANGELOG`](CHANGELOG.md) file for details.
-
 ## Authors
 
-This project owes its existence to the collective efforts of all those who contribute — [contribute now](CONTRIBUTING.md).
-
-<div align="center">
-  <a href="https://github.com/hoppscotch/hoppscotch/graphs/contributors">
-    <img src="https://opencollective.com/hoppscotch/contributors.svg?width=840&button=false"
-      alt="Contributors"
-      width="100%" />
-  </a>
-</div>
+This project owes its existence to the collective efforts of all the [original contributors](https://github.com/RubisetCie/hoppscotch/graphs/contributors).
 
 ## License
 
